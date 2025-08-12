@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<style>
+    body {
+        background: linear-gradient(to bottom, #FFCFE5);
+        margin: 0;
+        padding: 0;
+        color: #FFCFE5;
+        min-height: 100vh; /* Asegura que el degradado cubra toda la altura de la página */
+    }
+
+    .welcome-title {
+        font-family: 'Segoe UI', sans-serif;
+        color: #A66130;
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .welcome-image {
+        max-width: 400px;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .content-container {
+        text-align: center;
+        max-width: 1000px;
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+        max-height: 800px;
+        display: block;
+        border-radius: 8px;
+    }
+</style>
+
+    <main>
+        <div class="content-container">
+            <section class="row" aria-labelledby="aspnetTitle">
+                <h1 id="title" class="welcome-title">Bienvenido a HelpWatch</h1>
+            </section>
+            <hr />
+            <section>
+            <div class="image-container">
+                <img src="~/img/1.png"
+                     alt="Ansiedad"
+                     loading="lazy"
+                     decoding="async"
+                     width="1000" />
+                </div>
+                </section>
+            </div>
+</main>

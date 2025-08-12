@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - HelpWatch</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        /* Estilos de la barra de navegación */
+        .custom-navbar {
+            background-color: #A66130; /* Aquí puedes cambiar el color a tu gusto */
+        }
+
+        /* Estilos del body por defecto para todas las páginas */
+        body {
+            background-color: #f0f2f5; /* Color por defecto */
+            color: #333; /* Color de texto por defecto */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilo específico para la página de inicio */
+        .home-background {
+            background: linear-gradient(to bottom, #e0f7fa, #f1f8ff);
+            min-height: 100vh;
+        }
+
+        /* Otros estilos que hayas definido */
+        .welcome-title {
+            font-family: 'Segoe UI', sans-serif;
+            color: #A66130;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .welcome-image {
+            max-width: 400px;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark custom-navbar">
+        <div class="container">
+            @Html.ActionLink("HELPWATCH", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar navegación" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Test", "Create", "Respuestas", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>
+                        <a class="nav-link" href="https://localhost:44333/FormularioHelp/index">
+                            Formulario
+                        </a>
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+
+
+   
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
+</body>
+</html>

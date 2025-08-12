@@ -1,0 +1,113 @@
+﻿<style>
+    /* Estilo para el cuerpo */
+    body {
+        background: linear-gradient(to right, #F7EBD2);
+        min-height: 100vh;
+        font-family: 'Segoe UI', sans-serif;
+        display: flex;
+        flex-direction: column; /* Coloca los elementos en columna (barra arriba, contenido abajo) */
+        align-items: center;
+        margin: 0;
+        color: #4a4a4a;
+    }
+
+    /* Estilo para la barra de navegación café */
+    nav {
+        background-color: #A0522D; /* Color café */
+        width: 100%;
+        padding: 15px 0;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        color: #fff;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    /* Estilos para la "caja" transparente del contenido principal */
+    main {
+        width: 100%;
+        max-width: 600px;
+        padding: 30px;
+        box-sizing: border-box;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-top: 30px; /* Espacio para separar el contenido de la barra de navegación */
+    }
+
+    h2#title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #1a237e;
+        margin-bottom: 1.5rem;
+    }
+
+    p.text-success {
+        color: #2e7d32;
+        font-weight: 500;
+        font-style: italic;
+        margin-bottom: 2rem;
+    }
+
+    hr {
+        border: none;
+        height: 1px;
+        background-color: rgba(0, 0, 0, 0.1);
+        margin: 2rem 0;
+    }
+
+    .dl-horizontal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+        .dl-horizontal dt {
+            font-weight: 700;
+            color: #333;
+        }
+
+        .dl-horizontal dd {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+</style>
+ 
+<center><main aria-labelledby="title">
+    <h2 id="title">Cambiar la configuración de la cuenta</h2>
+    <p class="text-success">@ViewBag.StatusMessage</p>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>Contraseña:</dt>
+            <dd>
+                [
+                @if (Model.HasPassword)
+                {
+                    @Html.ActionLink("Cambiar la contraseña", "ChangePassword")
+                }
+                else
+                {
+                    @Html.ActionLink("Crear", "SetPassword")
+                }
+                ]
+            </dd>
+        </dl>
+    </div>
+</main>
+</center>
